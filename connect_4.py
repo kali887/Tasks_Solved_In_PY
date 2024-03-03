@@ -1,3 +1,10 @@
+#Name && Autor: Mostafa Ahmed Magd Ali
+#ID: 20230551
+#Stablish Date: 27/2/2024
+#Version: 1.0
+
+
+
 # Online Python compiler (interpreter) to run Python online.
 # Write Python 3 code in this online editor and run it.
 Main_Column = [1, 2, 3, 4, 5, 6, 7]
