@@ -1,5 +1,8 @@
-# Online Python compiler (interpreter) to run Python online.
-# Write Python 3 code in this online editor and run it.
+#Name && Autor: Mostafa Ahmed Magd Ali
+#ID: 20230551
+#Stablish Date: 27/2/2024
+#Version: 1.0
+
 Main_Column = [1, 2, 3, 4, 5, 6, 7]
 global rep1, rep2, rep3, rep4, rep5, rep6, rep7
 rep1 = 0
