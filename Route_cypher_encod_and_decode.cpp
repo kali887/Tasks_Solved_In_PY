@@ -1,4 +1,3 @@
-//
 // Created by mosta on 3/10/2024.
 //
 #include <iostream>
@@ -33,6 +32,7 @@ int main() {
             counter += 1;
         }
         int index2 = 0;
+        int res=0;
         int row_s = counter / choice2;
         char matrix[choice2][row_s];
         for (int rows = 0; rows < row_s; rows++) {
@@ -68,9 +68,9 @@ int main() {
         int x=2;
         int y=1;
         while(true){
-            if(matrix[choice2-x][y]!=matrix2[choice2-x][y]){
-                cout<<matrix[choice2-x][y];
-                matrix2[choice2-x][y] = matrix[choice2-x][y];
+            if(matrix[choice2-x+res][y]!=matrix2[choice2-x+res][y]){
+                cout<<matrix[choice2-x+res][y];
+                matrix2[choice2-x+res][y] = matrix[choice2-x+res][y];
                 y+=1;
             }
             else if(matrix[choice2-x-1][y-1]!=matrix2[choice2-x-1][y-1]){
@@ -78,15 +78,16 @@ int main() {
                 matrix2[choice2-x-1][y-1] = matrix[choice2-x-1][y-1];
                 x+=1;
             }
-            else if(matrix[choice2-x-1][y-1]!=matrix2[choice2-x-1][y-1]){
-                cout<<matrix[choice2-x-1][y-1];
-                matrix2[choice2-x-1][y-1] = matrix[choice2-x-1][y-1];
+            else if(matrix[choice2-x][y-2]!=matrix2[choice2-x][y-2]){
+                cout<<matrix[choice2-x][y-2];
+                matrix2[choice2-x][y-2] = matrix[choice2-x][y-2];
                 y-=1;
             }
-            else if(matrix[choice2-x-1+1][y-1]!=matrix2[choice2-x-1+1][y-1]){
-                cout<<matrix[choice2-x-1+1][y-1];
-                matrix2[choice2-x-1][y-1] = matrix[choice2-x-1][y-1];
+            else if(matrix[choice2-x+1][y-1]!=matrix2[choice2-x+1][y-1]){
+                cout<<matrix[choice2-x+1][y-1];
+                matrix2[choice2-x+1][y-1] = matrix[choice2-x+1][y-1];
                 x-=1;
+                res=1;
             }
             else{
                 break;
@@ -137,9 +138,10 @@ int main() {
         }
         int x=2;
         int y=1;
+        int res=0;
         while(u < counter){ // Check that u is less than counter
-            if(char(sps) == char(matrix2[choice2-x][y])){
-                matrix2[choice2-x][y] = new_sent[u];
+            if(char(sps) == char(matrix2[choice2-x+res][y])){
+                matrix2[choice2-x+res][y] = new_sent[u];
                 y+=1;
                 u+=1;
             }
@@ -148,15 +150,16 @@ int main() {
                 x+=1;
                 u+=1;
             }
-            else if(sps==matrix2[choice2-x-1][y-1]){
-                matrix2[choice2-x-1][y-1] = new_sent[u];
+            else if(sps==matrix2[choice2-x][y-2]){
+                matrix2[choice2-x][y-2] = new_sent[u];
                 y-=1;
                 u+=1;
             }
-            else if(sps==matrix2[choice2-x-1+1][y-1]){
-                matrix2[choice2-x-1][y-1] = new_sent[u];
+            else if(sps==matrix2[choice2-x+1][y-1]){
+                matrix2[choice2-x+1][y-1] = new_sent[u];
                 x-=1;
                 u+=1;
+                res=1;
             }
             else{
                 break;
